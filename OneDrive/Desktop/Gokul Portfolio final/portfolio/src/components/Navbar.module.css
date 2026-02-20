@@ -1,0 +1,137 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scrolled {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.scrolled .logo,
+.scrolled .logoFirst,
+.scrolled .logoLast {
+  color: #fff !important;
+}
+.scrolled .logoUnderscore {
+  color: var(--accent-light) !important;
+}
+.scrolled .navLink,
+.scrolled .navLink:visited {
+  color: #eaf6fb !important;
+}
+.scrolled .navLink:hover,
+.scrolled .active {
+  color: var(--accent-light) !important;
+  background: rgba(113, 183, 213, 0.10);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo:hover .logoUnderscore {
+  animation: none;
+  opacity: 1;
+}
+
+.logoFirst {
+  color: var(--text-primary);
+}
+
+.logoUnderscore {
+  color: var(--accent);
+  font-weight: 400;
+  animation: blink 1s step-end infinite;
+}
+
+.logoLast {
+  color: var(--text-primary);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.desktopLinks {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary) !important;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.navLink:hover,
+.active {
+  color: var(--accent-light) !important;
+  background: rgba(108, 99, 255, 0.08);
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.mobileLinks {
+  display: none;
+  list-style: none;
+  padding: 12px 24px 20px;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(20px);
+}
+
+.mobileLinks .navLink {
+  display: block;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .desktopLinks { display: none; }
+  .mobileToggle { display: block; }
+  .mobileLinks { display: block; }
+}

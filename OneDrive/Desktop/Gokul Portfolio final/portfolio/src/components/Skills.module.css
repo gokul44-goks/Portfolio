@@ -1,0 +1,119 @@
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skillCard {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(108, 99, 255, 0.03) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient-1);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skillCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 40px rgba(108, 99, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.skillCard:hover::before {
+  opacity: 1;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #08171E;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  background: none;
+  text-shadow: 0 1px 8px rgba(9, 107, 144, 0.10);
+  letter-spacing: 0.2px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 10px;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.skillChip:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.25);
+}
+
+.chipIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.3rem;
+}
+
+.chipIconWrapper {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .skillCard {
+    padding: 22px;
+  }
+  
+  .cardTitle {
+    font-size: 1.15rem;
+  }
+  
+  .skillChip {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}

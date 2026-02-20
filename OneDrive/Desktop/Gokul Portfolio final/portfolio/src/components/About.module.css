@@ -1,0 +1,116 @@
+.aboutGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.textSection {
+  max-width: 900px;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.highlight {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 22px;
+  text-align: justify;
+  font-weight: 400;
+}
+
+.philosophy {
+  font-size: 1.1rem;
+  color: var(--accent-light);
+  line-height: 1.8;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent);
+  margin-top: 12px;
+  font-style: italic;
+  text-align: justify;
+}
+
+/* Highlights Section */
+.highlightsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.highlightsTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 900px;
+}
+
+.highlightCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  width: 180px;
+  height: 120px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: default;
+  transition: all 0.3s ease;
+  box-sizing: border-center;
+  margin: 0 auto;
+}
+
+.highlightCard:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.highlightIcon {
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+.highlightCard span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .aboutGrid {
+    gap: 40px;
+  }
+  .highlightsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+  }
+}
